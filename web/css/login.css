@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+}
+.login-form{
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 300px;
+
+}
+
+.login-logo{
+    margin:0 auto;
+    width: 100px;
+    height: 100px;
+    background: url("../img/logo.png") no-repeat;
+    background-size: 100% 100%;
+}
+.login-title{
+    margin:20px 0;
+    text-align: center;
+    font-size: 24px;
+    color:darkgrey;
+}
+.login-form form,.new-user{
+    border:1px solid #d3d3d3;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+.login-form .inputs{
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+}
+.login-form input:not([type="submit"]){
+    border-radius: 5px;
+    border:2px solid #dadada;
+    padding: 10px;
+}
+.login-form input:not([type="submit"]):focus{
+    border:2px solid #257795;
+    box-shadow: 0 0 5px #257795;
+}
+.login-form input[type="submit"]{
+    height: 50px;
+    border-radius: 5px;
+    margin: 20px auto;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+.new-user{
+    color: grey;
+    padding: 5px;
+}
+.new-user a{
+    text-decoration: none;
+    color:#4078C0;
+}
+.new-user a:hover {
+    text-decoration: underline;
+}
+.login-form input[type="submit"] {
+    height: 50px;
+    border-radius: 5px;
+    margin: 20px auto;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #257795;
+    color: white;
+    background-image: linear-gradient(to bottom,#85C7D5 50%,#5597b5);
+}
+.login-form  input[type="checkbox"]
+{
+    margin-left: 14px;
+}
+.login-form  input[type="submit"]:hover{
+    color: white;
+    background-image: linear-gradient(to bottom,#5597b5 50%,#257795);
+}
+

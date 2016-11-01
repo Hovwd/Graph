@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - devgraph@localhost" uuid="53d23516-6644-4da7-9cab-57afd6301445">
+    <database-info product="MySQL" version="5.7.15-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="devgraph"/>
+    <table name="answer" schema="" catalog="devgraph" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="userId" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="questionId" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="answer" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="like" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="dislike" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="questionAnswer" columns="questionId" ref-table="question" ref-schema="" ref-catalog="devgraph" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="userAnswer" columns="userId" ref-table="user" ref-schema="" ref-catalog="devgraph" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="answerComment" table="comment" schema="" catalog="devgraph" columns="answerId"/>
+      <index name="questionAnswer" unique="false" columns="questionId"/>
+      <index name="userAnswer" unique="false" columns="userId"/>
+    </table>
+    <table name="comment" schema="" catalog="devgraph" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="userId" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="answerId" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="comment" sqlType="VARCHAR" precision="250" scale="0" nullable="true" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="answerComment" columns="answerId" ref-table="answer" ref-schema="" ref-catalog="devgraph" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <foreign-key name="userComment" columns="userId" ref-table="user" ref-schema="" ref-catalog="devgraph" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="answerComment" unique="false" columns="answerId"/>
+      <index name="userComment" unique="false" columns="userId"/>
+    </table>
+    <table name="job" schema="" catalog="devgraph" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="organisationId" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="title" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="location" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="responsibilites" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12"/>
+      <column name="requirments" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12"/>
+      <column name="openDate" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="deadline" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="orgJob" columns="organisationId" ref-table="oranisation" ref-schema="" ref-catalog="devgraph" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="orgJob" unique="false" columns="organisationId"/>
+    </table>
+    <table name="oranisation" schema="" catalog="devgraph" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="userId" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="name" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12"/>
+      <column name="description" sqlType="VARCHAR" precision="500" scale="0" nullable="false" jdbcType="12"/>
+      <column name="logo" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="webSite" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="mail" sqlType="VARCHAR" precision="35" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="userorg" columns="userId" ref-table="user" ref-schema="" ref-catalog="devgraph" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="orgJob" table="job" schema="" catalog="devgraph" columns="organisationId"/>
+      <index name="userorg" unique="false" columns="userId"/>
+    </table>
+    <table name="prize" schema="" catalog="devgraph" type="TABLE">
+      <column name="answerId" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="userId" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="prize" sqlType="ENUM" precision="7" scale="0" nullable="true" jdbcType="1"/>
+      <index name="userPrize" unique="false" columns="userId"/>
+    </table>
+    <table name="question" schema="" catalog="devgraph" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="userId" sqlType="BIGINT" precision="19" scale="0" nullable="true" jdbcType="-5"/>
+      <column name="title" sqlType="VARCHAR" precision="500" scale="0" nullable="true" jdbcType="12"/>
+      <column name="question" sqlType="VARCHAR" precision="300" scale="0" nullable="true" jdbcType="12"/>
+      <column name="date" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="userQuestion" columns="userId" ref-table="user" ref-schema="" ref-catalog="devgraph" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <exported-key name="questionAnswer" table="answer" schema="" catalog="devgraph" columns="questionId"/>
+      <index name="userQuestion" unique="false" columns="userId"/>
+    </table>
+    <table name="user" schema="" catalog="devgraph" type="TABLE">
+      <column name="id" sqlType="BIGINT" precision="19" scale="0" nullable="false" jdbcType="-5"/>
+      <column name="firstName" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12"/>
+      <column name="lastName" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12"/>
+      <column name="gender" sqlType="VARCHAR" precision="5" scale="0" nullable="true" jdbcType="12"/>
+      <column name="birdtDate" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="country" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sity" sqlType="VARCHAR" precision="25" scale="0" nullable="true" jdbcType="12"/>
+      <column name="mail" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="25" scale="0" nullable="false" jdbcType="12"/>
+      <column name="image" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="cv" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="userAnswer" table="answer" schema="" catalog="devgraph" columns="userId"/>
+      <exported-key name="userComment" table="comment" schema="" catalog="devgraph" columns="userId"/>
+      <exported-key name="userorg" table="oranisation" schema="" catalog="devgraph" columns="userId"/>
+      <exported-key name="userQuestion" table="question" schema="" catalog="devgraph" columns="userId"/>
+    </table>
+  </data-source>
+</component>

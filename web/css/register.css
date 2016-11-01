@@ -1,0 +1,335 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body,html{
+    font-family: Arial, sans-serif;
+}
+.mobile-visible{
+    display: none;
+}
+.wrapper{
+    width: 1000px;
+    margin:0 auto;
+}
+.navigation{
+    height: 75px;
+    box-shadow: 1px 0 5px #000;
+    padding-top: 10px;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    float:left;
+    background: url(../img/logo.png) no-repeat;
+    background-size: 100% 100%;
+
+    transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+.logo:hover{
+    transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+}
+nav ul li{
+    padding: 15px;
+    float: left;
+}
+nav ul li a{
+    text-decoration: none;
+    color:#4c5156;
+    text-shadow: 1px 0 #ddd;
+}
+nav ul li a:hover{
+    text-decoration: none;
+    color:#000;
+}
+.right-menu{
+    float:right;
+}
+.right-menu li{
+    font-size: 14px;
+    padding-right: 5px;
+}
+.buttons{
+    padding-top: 5px;
+}
+input[name="search"]{
+    display: block;
+    height: 35px;
+    padding-left: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    border:1px solid #d3d3d3;
+}
+input[name="search"]:focus{
+    border:1px solid #51a7e8;
+    box-shadow: 0 0 6px #51a7e8;
+}
+.btn{
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    padding:0 10px;
+    border:1px solid #d3d3d3;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom,#fff 50%,#ccc);
+}
+.btn:hover{
+    background-image: linear-gradient(to bottom,#efefef 50%,#ccc);
+}
+.btn-success,.container input[type=submit]{
+    border:1px solid #257795;
+    color: white;
+    background-image: linear-gradient(to bottom,#85C7D5 50%,#5597b5);
+}
+.btn-success:hover,input[type=submit]:hover{
+    color: white;
+    background-image: linear-gradient(to bottom,#5597b5 50%,#257795);
+}
+.mobile-visible{
+    background: url(../img/menu-bars.png) no-repeat;
+    width: 24px;
+    height: 24px;
+    float:right;
+    margin:16px;
+}
+#menu-check{
+    display: none;
+}
+.intro{
+    padding: 100px 0;
+    background: url(../img/jumbo.jpg) no-repeat;
+    background-size: cover;
+}
+.intro::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.registration{
+    width: 30%;
+    float:left;
+}
+.welcome{
+    width:60%;
+    float:left;
+    color:#f5f5f5;
+    text-shadow: 0 0 10px #000;
+}
+.welcome h2{
+    font-size: 54px;
+    font-weight: 200;
+}
+.welcome p{
+    font-size: 26px;
+}
+.registration input{
+    display: block;
+    margin-top:10px;
+    font-size:18px;
+    padding-left: 20px;
+}
+.registration input:not([type="submit"]){
+    width: 300px;
+    height: 40px;
+    border:1px solid #000;
+    border-radius: 5px;
+}
+.registration input:not([type="submit"]):focus{
+    box-shadow: 0 0 5px #fff;
+}
+.registration input[type="submit"]{
+    width: 300px;
+    height: 50px;
+    text-align: center;
+}
+.registration input[type="submit"]:hover{
+    cursor: pointer;
+}
+@media only screen and (min-width:1000px){
+    #collapse{
+        display: block;
+    }
+}
+@media only screen and (max-width:1000px) and (min-width: 768px){
+    .wrapper{
+        width: 768px;
+    }
+    select{
+        display: block;
+    }
+    .right-menu li{
+        float:right;
+        font-size: 14px;
+        padding-right: 0px;
+    }
+    .intro{
+        padding: 60px 0;
+    }
+}
+@media only screen and (max-width:768px) {
+    .wrapper {
+        width: 100vw;
+    }
+
+    .mobile-hidden {
+        display: none;
+    }
+
+    .mobile-visible {
+        display: block;
+    }
+
+    .right-menu li,
+    .right-menu {
+        width: 100%;
+    }
+
+    .right-menu input {
+        width: 100%;
+    }
+
+    .right-menu {
+        position: absolute;
+        border-radius: 5px;
+        border: 1px solid #d0d0d0;
+        background-color: #e9e9e9;
+        top: 75px;
+    }
+ .container form{
+     width: 100%;
+
+ }
+    .buttons form {
+        display: none !important;
+    }
+
+    #menu-check:checked ~ #collapse {
+        display: block;
+    }
+
+    .intro {
+        padding: 30px 0;
+    }
+
+    .welcome, .registration {
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .welcome h2 {
+        font-size: 32px;
+    }
+
+    .welcome p {
+        font-size: 18px;
+    }
+
+    .registration input {
+        margin: 10px auto;
+    }
+    .container label,.container *{
+        display: table!important;
+        margin: 0 auto;
+        text-align: center !important;
+    }
+    h1{
+        font-size: 20px!important;
+    }
+}
+.container label{
+    line-height: 20px;
+}
+.container label,.container select
+{
+display: block;
+
+}
+.container label
+{
+    width: 150px;
+    /*//text-align: right;*/
+    padiding:10px;
+}
+.container div{
+    height: 0px;
+}
+.container input,.container select {
+    height: 35px;
+    padding-left: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    padding: 5px 10px!important;
+    margin-bottom: 5px;
+
+}
+.container input:focus, .container select:focus{
+    border:1px solid #51a7e8;
+    box-shadow: 0 0 6px #51a7e8;
+}
+.container input[type=submit]{
+    position: relative;
+}
+form,section{
+    width: 40%;
+    float: left;
+
+}
+main{
+   box-shadow: 10px 10px 100px black;
+    padding-bottom: 30px;
+    background: #F5F5F5;
+}
+main:after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+section h2
+{
+    border-bottom: 1px solid #adadad;
+    padding-bottom: 5px;
+}
+section div{
+    padding: 10px 5px;
+    font-size: 18px;
+}
+section{
+    margin-left: 10%;
+    border:1px solid #adadad;
+    border-radius:15px;
+    height: 250px!important;
+    box-shadow: 5px 5px 50px black;
+    position: relative;
+}
+section b,section h2,section div{
+    padding-left: 15px;
+}
+main{
+    padding-left: 30px;
+}
+.img{
+    height: 200px!important;
+    width: 200px !important;
+    position: absolute;
+    background-image: url("../img/NetworkIcon.png");
+    background-size: 100% 100%;
+    left: 50px;
+    top: 280px;
+    transition: all 25s;
+}
+.img:hover{
+    transform: rotate(3600deg) scale(1.5);
+    transition: all 25s;
+}

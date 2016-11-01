@@ -1,0 +1,294 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+}
+.mobile-visible{
+    display: none;
+}
+.wrapper{
+    width: 1000px;
+    margin:0 auto;
+}
+.navigation{
+    height: 75px;
+    box-shadow: 1px 0 5px #000;
+    padding-top: 10px;
+}
+.logo{
+    width: 50px;
+    height: 50px;
+    float:left;
+    background: url(../img/logo.png) no-repeat;
+    background-size: 100% 100%;
+
+    transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+.logo:hover{
+    transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+}
+nav ul li{
+    padding: 15px;
+    float: left;
+}
+nav ul li a{
+    text-decoration: none;
+    color:#4c5156;
+    text-shadow: 1px 0 #ddd;
+}
+nav ul li a:hover{
+    text-decoration: none;
+    color:#000;
+}
+.right-menu{
+    float:right;
+}
+.right-menu li{
+    font-size: 14px;
+    padding-right: 5px;
+}
+.buttons{
+    padding-top: 5px;
+}
+input[name="search"]{
+    display: block;
+    height: 35px;
+    padding-left: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    border:1px solid #d3d3d3;
+}
+input[name="search"]:focus{
+    border:1px solid #51a7e8;
+    box-shadow: 0 0 6px #51a7e8;
+}
+.btn{
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    padding:0 10px;
+    border:1px solid #d3d3d3;
+    border-radius: 5px;
+    background-image: linear-gradient(to bottom,#fff 50%,#ccc);
+}
+.btn:hover{
+    background-image: linear-gradient(to bottom,#efefef 50%,#ccc);
+}
+.btn-success{
+    border:1px solid #257795;
+    color: white;
+    background-image: linear-gradient(to bottom,#85C7D5 50%,#5597b5);
+}
+.btn-success:hover{
+    color: white;
+    background-image: linear-gradient(to bottom,#5597b5 50%,#257795);
+}
+.mobile-visible{
+    background: url(../img/menu-bars.png) no-repeat;
+    width: 24px;
+    height: 24px;
+    float:right;
+    margin:16px;
+}
+#menu-check{
+    display: none;
+}
+/*      Intro
+======================*/
+.intro{
+    padding: 100px 0;
+    background: url(../img/jumbo.jpg) no-repeat;
+    background-size: cover;
+}
+.intro::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.registration{
+    width: 30%;
+    float:left;
+}
+.welcome{
+    width:60%;
+    float:left;
+    color:#f5f5f5;
+    text-shadow: 0 0 10px #000;
+}
+.welcome h2{
+    font-size: 54px;
+    font-weight: 200;
+}
+.welcome p{
+    font-size: 26px;
+}
+.registration input{
+    display: block;
+    margin-top:10px;
+    font-size:18px;
+    padding-left: 20px;
+}
+.registration input:not([type="submit"]){
+    width: 300px;
+    height: 40px;
+    border:1px solid #000;
+    border-radius: 5px;
+}
+.registration input:not([type="submit"]):focus{
+    box-shadow: 0 0 5px #fff;
+}
+.registration input[type="submit"]{
+    width: 300px;
+    height: 50px;
+    text-align: center;
+}
+.registration input[type="submit"]:hover{
+    cursor: pointer;
+}
+@media only screen and (min-width:1000px){
+    #collapse{
+        display: block;
+    }
+}
+@media only screen and (max-width:1000px) and (min-width: 768px){
+    .wrapper{
+        width: 768px;
+    }
+    .right-menu li{
+        float:right;
+        font-size: 14px;
+        padding-right: 0px;
+    }
+    .intro{
+        padding: 60px 0;
+    }
+}
+@media only screen and (max-width:768px){
+    .wrapper{
+        width: 100vw;
+    }
+    .mobile-hidden{
+        display: none;
+    }
+    .mobile-visible{
+        display: block;
+    }
+    .right-menu li,
+    .right-menu
+    {
+        width: 100%;
+    }
+    .right-menu input{
+        width: 100%;
+    }
+    .right-menu{
+        position:absolute;
+        border-radius: 5px;
+        border:1px solid #d0d0d0;
+        background-color: #e9e9e9;
+        top:75px;
+    }
+    .buttons form{
+        display: none !important;
+    }
+    #menu-check:checked~#collapse{
+        display: block;
+    }
+    
+    .intro{
+        padding: 30px 0;
+    }
+    .welcome,.registration{
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+    .welcome h2{
+        font-size: 32px;
+    }
+    .welcome p{
+        font-size: 18px;
+    }
+    .registration input{
+        margin:10px auto;
+    }
+}
+
+
+/*             LOGIN.HTML
+=========================================================*/
+
+.login-form{
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 300px;
+
+}
+.login-logo{
+    margin:0 auto;
+    width: 100px;
+    height: 100px;
+    background: url("../img/logo.png") no-repeat;
+    background-size: 100% 100%;
+}
+.login-title{
+    margin:20px 0;
+    text-align: center;
+    font-size: 24px;
+    color:darkgrey;
+}
+.login-form form,.new-user{
+    border:1px solid #d3d3d3;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+.login-form .inputs{
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+}
+.login-form input:not([type="submit"]){
+    border-radius: 5px;
+    border:2px solid #dadada;
+    padding: 10px;
+}
+.login-form input:not([type="submit"]):focus{
+    border:2px solid #257795;
+    box-shadow: 0 0 5px #257795;
+}
+.login-form input[type="submit"]{
+    height: 50px;
+    border-radius: 5px;
+    margin: 20px auto;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+.new-user{
+    color: grey;
+    padding: 5px;
+}
+.new-user a{
+    text-decoration: none;
+    color:#4078C0;
+}
+.new-user a:hover{
+    text-decoration: underline;
+}
+
+/*               REGISTER.HTML
+==========================================================*/
+
