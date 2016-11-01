@@ -17,7 +17,7 @@ public class DbConnector {
     {
         try {
             connection =  DriverManager.getConnection(URL, PASSWORD, LOGIN);
-        }catch (Exception e){System.out.print("es inj axmaxutyuna");}
+        }catch (Exception e){System.out.print("can not coonect fb");}
 
         try {
 
