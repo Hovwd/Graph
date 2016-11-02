@@ -44,10 +44,10 @@
       <input type="text" placeholder="cacke your Firstname" class="" name="firstname">
       <div class="clear"></div>
       <label for=""  class=" ">Lastname</label>
-      <input type="text" placeholder="cacke your Lastname" class="" name="lastName">
+      <input type="text" placeholder="cacke your Lastname" class="" name="lastname"/>
       <div class="clear"></div>
       <label for=""  class="">Gender</label>
-      <select name="gender" placeholder="cacke your Gender" name="gender" class="" name="lastName">
+      <select name="gender" placeholder="cacke your Gender" name="gender" class="" name="gender">
           <option>male</option>
           <option>female</option>
       </select>
@@ -62,7 +62,7 @@
       <input type="text" name="sity" placeholder="Check sity" class="">
       <div class="clear"></div>
       <label for="" class="">Email</label>
-      <input type="email" class="" name="email">
+      <input type="email" class="" name="mail">
       <div class="clear"></div>
       <label for="" >Password</label>
       <input type="Password" name="password">
