@@ -54,4 +54,50 @@ public class UserRepository {
         result.next();
         return result.getInt(1)==0;
     }
+    public boolean existUser(String mail,String password)throws Exception{
+        Connection connection = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            System.out.print("class not afound");
+        }
+        ResultSet result = null;
+        try {
+            connection = DriverManager.getConnection(url, "root", "root");
+            String sql = "SELECT COUNT(*)  FROM USER  WHERE mail=? or password=?;";
+            PreparedStatement ps=connection.prepareStatement(sql);
+            ps.setString(1,mail);
+            ps.setString(2, password);
+            result=ps.executeQuery();
+        } catch (SQLException e) {
+            System.out.print("can not to connect db");
+        }
+        result.next();
+        return result.getInt(1)==0;
+    }
+    public User GetUser(String mail,String password) throws SQLException {
+        Connection connection = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            System.out.print("class not afound");
+        }
+        ResultSet result = null;
+        try {
+            connection = DriverManager.getConnection(url, "root", "root");
+            String sql = "SELECT *  FROM USER  WHERE mail=? and password=?;";
+            PreparedStatement ps=connection.prepareStatement(sql);
+            ps.setString(1,mail);
+            ps.setString(2,password);
+            result=ps.executeQuery();
+        } catch (SQLException e) {
+            System.out.print("can not to connect db");
+        }
+        try {
+            result.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return new User(result.getLong(1),result.getString(2),result.getString(3),result.getDate(4),result.getString(5),result.getString(6),result.getString(7),result.getString(8),result.getString(9),result.getString(10),result.getString(11));
+    }
 }

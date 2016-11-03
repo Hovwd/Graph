@@ -15,7 +15,22 @@ public class User {
     private String password;
     private String image;
     private String logo;
-public User(long id, String firstName, String lastName, String birdtDate, String gender, String country, String sity, String mail, String password) {
+
+    public User(long id, String firstName, String lastName, Date birdtDate, String gender, String country, String sity, String mail, String password, String image, String logo) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birdtDate = birdtDate;
+        this.gender = gender;
+        this.country = country;
+        this.sity = sity;
+        this.mail = mail;
+        this.password = password;
+        this.image = image;
+        this.logo = logo;
+    }
+
+    public User(long id, String firstName, String lastName, String birdtDate, String gender, String country, String sity, String mail, String password) {
     this.id = id;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -28,6 +43,7 @@ public User(long id, String firstName, String lastName, String birdtDate, String
     this.sity = sity;
     this.mail = mail;
     this.password = password;
+
 }
     public void setId(long id) {
         this.id = id;

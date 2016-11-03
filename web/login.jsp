@@ -9,13 +9,13 @@
 <div class="login-form">
     <div class="login-logo"></div>
     <div class="login-title">Sign in to Developer Graph</div>
-    <form action="/">
+    <form action="login" method="post">
         <label class="inputs" for="login">Username or email address </label>
-        <input class="inputs" id="login" type="text"/>
+        <input class="inputs" id="login" type="email" name="mail"/>
         <label class="inputs" for="pass">Password </label>
-        <input class="inputs" id="pass" type="password"/>
+        <input class="inputs" id="pass" type="password" name="password"/>
         <label class="inputs" for="pass">Remambre my acount</label>
-        <input type="checkbox">
+        <input type="checkbox" name="remamer">
         <input  class="btn btn-success inputs" type="submit" value="Sign in"/>
     </form>
     <div class="new-user">
