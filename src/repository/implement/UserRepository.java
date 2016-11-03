@@ -17,7 +17,7 @@ public class UserRepository {
         Connection connection = null;
         Class.forName("com.mysql.cj.jdbc.Driver");
         connection = DriverManager.getConnection(url, "root", "root");
-        String sql = "insert into user(id,firstName,lastName,gender,country,sity,mail,password) VALUES (?,?,?,?,?,?,?,?);";
+        String sql = "insert into user(id,firstName,lastName,gender,country,city,mail,password) VALUES (?,?,?,?,?,?,?,?);";
         PreparedStatement ps = null;
         ps = connection.prepareStatement(sql);
         ps.setLong(1, new Random().nextLong());
