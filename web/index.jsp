@@ -10,7 +10,7 @@
         <div class="navigation">
             <div class="wrapper">
                 <nav>
-                    <a href="/dev-project/"><span class="logo"></span></a>
+                    <a href="/"><span class="logo"></span></a>
                     <ul class="main-menu">
                         <li><a href="#">List</a></li>
                         <li><a href="#">Link 2</a></li>
