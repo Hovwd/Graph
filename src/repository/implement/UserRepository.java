@@ -13,7 +13,7 @@ import java.util.Date;
 public class UserRepository {
     private final static String PASSWORD = "root";
     private final static String LOGIN = "root";
-    String url = "jdbc:mysql://localhost:3306/devgraph";
+    String url = "jdbc:mysql://localhost:3306/devgraph?autoReconnect=true&useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
     public User addUser(User user) throws Exception {
         Connection connection = null;
