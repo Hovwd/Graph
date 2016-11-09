@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/prof.css"/>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <meta charset="UTF-8">
     <title>Developer Graph</title>

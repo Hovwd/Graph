@@ -7,9 +7,6 @@ import java.sql.*;
 import java.util.*;
 import java.util.Date;
 
-/**
- * Created by developer on 02/11/2016.
- */
 public class UserRepository {
     private final static String PASSWORD = "root";
     private final static String LOGIN = "root";
@@ -94,6 +91,7 @@ public class UserRepository {
             ps.setString(1, mail);
             ps.setString(2, password);
             result = ps.executeQuery();
+            
         } catch (SQLException e) {
             System.out.print("can not to connect db");
         }
