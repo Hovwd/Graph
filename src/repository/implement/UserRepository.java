@@ -46,10 +46,9 @@ public class UserRepository {
         ResultSet result = null;
         try {
             connection = DriverManager.getConnection(url, "root", "root");
-            String sql = "SELECT COUNT(*)  FROM USER  WHERE mail=? OR password=?;";
+            String sql = "SELECT COUNT(*)  FROM USER  WHERE mail=?;";
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, user.getMail());
-            ps.setString(2, user.getPassword());
             result = ps.executeQuery();
         } catch (SQLException e) {
             System.out.print("can not to connect db");
