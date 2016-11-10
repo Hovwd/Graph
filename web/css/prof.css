@@ -19,7 +19,11 @@ nav{
     width: 50px;
     height: 50px;
     float:left;
+<<<<<<< HEAD
     background: url(../img/logo.png) no-repeat;
+=======
+    background: url(img/logo.png) no-repeat;
+>>>>>>> origin/master
     background-size: 100% 100%;
     transition: all 0.2s;
     -moz-transition: all 0.2s;

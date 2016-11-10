@@ -5,6 +5,7 @@ import repository.implement.UserRepository;
 import repository.util.DbConnector;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -42,12 +43,9 @@ public class RegServlet extends HttpServlet {
                 resp.sendRedirect("register.jsp");
             }
             else{
-                out.println(newUser.getBirdtDate());
-                out.println(newUser.getLastName());
-                out.println(newUser.getFirstName());
-                out.println(newUser.getMail());
-                out.println(newUser.getGender());
-                userRepository.addUser(newUser);
+                Cookie loginCookie = new Cookie("user", newUser.getFirstName());
+                resp.addCookie(loginCookie);
+                resp.sendRedirect("prof.jsp");
             }
 
         } catch (Exception e) {
