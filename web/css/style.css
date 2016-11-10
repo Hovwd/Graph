@@ -1,26 +1,31 @@
 *{
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     list-style: none;
     box-sizing: border-box;
-    outline: none !important;
 }
-body,html{
+body{
     font-family: Arial, sans-serif;
-
 }
-
-nav{
+.mobile-visible{
+    display: none;
+}
+.wrapper{
     width: 1000px;
     margin:0 auto;
 }
-
+.navigation{
+    height: 75px;
+    box-shadow: 1px 0 5px #000;
+    padding-top: 10px;
+}
 .logo{
     width: 50px;
     height: 50px;
     float:left;
-    background: url(img/logo.png) no-repeat;
+    background: url(../img/logo.png) no-repeat;
     background-size: 100% 100%;
+
     transition: all 0.2s;
     -moz-transition: all 0.2s;
     -o-transition: all 0.2s;
@@ -33,148 +38,257 @@ nav{
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
 }
-.navigation ul:first-child li{
-    padding-left: 15px;
+nav ul li{
+    padding: 15px;
     float: left;
 }
-.navigation ul li a{
+nav ul li a{
     text-decoration: none;
     color:#4c5156;
     text-shadow: 1px 0 #ddd;
 }
-.navigation ul li a:hover{
+nav ul li a:hover{
     text-decoration: none;
     color:#000;
 }
-
-/*      Intro
-======================*/
-.navigation ul:first-child{
-    width: 600px;
-
+.right-menu{
+    float:right;
 }
-.navigation ul:first-child{
-    float: left;
+.right-menu li{
+    font-size: 14px;
+    padding-right: 5px;
 }
-ul::after,.navigation::after{
-    content: "";
+.buttons{
+    padding-top: 5px;
+}
+input[name="search"]{
     display: block;
-    clear: both;
+    height: 35px;
+    padding-left: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    border:1px solid #d3d3d3;
 }
-
-
-input:not([type="submit"]):focus{
-    box-shadow: 0 0 5px #fff;
+input[name="search"]:focus{
+    border:1px solid #51a7e8;
+    box-shadow: 0 0 6px #51a7e8;
 }
-
-@media only screen and (min-width:1000px){  }
-@media only screen and (max-width:1000px) and (min-width: 768px) {  }
-@media only screen and (max-width:768px){
-
-}
-.right{
+.btn{
     display: block;
-    float: right;
-}
-.navigation ul:last-child li{
-    float: right;
-    display: block;
-}
-.btn1{
     height: 35px;
     line-height: 35px;
     padding:0 10px;
     border:1px solid #d3d3d3;
     border-radius: 5px;
-    color:white;
-    background-image: linear-gradient(to bottom,#85C7D5 50%,#5597b5) !important;
-
+    background-image: linear-gradient(to bottom,#fff 50%,#ccc);
 }
-.btn1:hover{
-    color: white;
-    background-image: linear-gradient(to bottom,#5597b5 50%,#257795) !important;
+.btn:hover{
+    background-image: linear-gradient(to bottom,#efefef 50%,#ccc);
 }
-
-
-.btn1{
+.btn-success{
     border:1px solid #257795;
     color: white;
     background-image: linear-gradient(to bottom,#85C7D5 50%,#5597b5);
 }
-input:focus,.btn1:focus{
-    border:1px solid #51a7e8;
-    box-shadow: 0 0 6px #51a7e8;
+.btn-success:hover{
+    color: white;
+    background-image: linear-gradient(to bottom,#5597b5 50%,#257795);
 }
-input[type="search"]{
-    height: 35px;
-    padding-left: 10px;
-    margin-right: 10px;
-    font-weight: bold;
-    border-radius: 5px;
-    border:1px solid #d3d3d3;
+.mobile-visible{
+    background: url(../img/menu-bars.png) no-repeat;
+    width: 24px;
+    height: 24px;
+    float:right;
+    margin:16px;
 }
-input[type="search"]:focus{
-    border:1px solid #51a7e8;
-    box-shadow: 0 0 6px #51a7e8;
+#menu-check{
+    display: none;
 }
-button:active{
-    background-image: linear-gradient(to bottom,#85C7D5 50%,#5597b5););
+/*      Intro
+======================*/
+.intro{
+    padding: 100px 0;
+    background: url(../img/jumbo.jpg) no-repeat;
+    background-size: cover;
 }
-header{
-    padding: 10px 0px;
-}
-ul li a{
-    line-height: 35px;
-}
-header{
-    background: white;
-box-shadow: 0px 0px 50px black;
-
-}
-.img img{
-    width: 100%;
-    height: auto;
-}
-main{
-border-top: 2px solid #5C9EBA;
-box-shadow: 10px 10px 100px black;
-}
-.prof{
-    padding-top: 25px;
-    width: 25%;
-    float: left;
-    min-width: 150px;
-}
-main section:nth-child(2) {
-    width: 70%;
-    padding-top: 25px;
-    height: 200px;
-
-    float: left;
-}
-.clear{
+.intro::after{
+    content: "";
+    display: block;
     clear: both;
 }
-.edit{
+.registration{
+    width: 30%;
+    float:left;
+}
+.welcome{
+    width:60%;
+    float:left;
+    color:#f5f5f5;
+    text-shadow: 0 0 10px #000;
+}
+.welcome h2{
+    font-size: 54px;
+    font-weight: 200;
+}
+.welcome p{
+    font-size: 26px;
+}
+.registration input{
     display: block;
-    margin: 0 auto;
+    margin-top:10px;
+    font-size:18px;
+    padding-left: 20px;
 }
-.rep li{
-    float: left;
-    margin-left: 20px;
-    font-weight: bold;
-
+.registration input:not([type="submit"]){
+    width: 300px;
+    height: 40px;
+    border:1px solid #000;
+    border-radius: 5px;
 }
-.rep li:hover{
-    border-bottom: 3px solid #5C9EBA;
+.registration input:not([type="submit"]):focus{
+    box-shadow: 0 0 5px #fff;
+}
+.registration input[type="submit"]{
+    width: 300px;
+    height: 50px;
+    text-align: center;
+}
+.registration input[type="submit"]:hover{
     cursor: pointer;
 }
-main nav
-{
-    margin-top: 40px;
-    margin-left: 15px;
-    height: 40px;
+@media only screen and (min-width:1000px){
+    #collapse{
+        display: block;
+    }
 }
-.question{
-    padding-left: 30px;
+@media only screen and (max-width:1000px) and (min-width: 768px){
+    .wrapper{
+        width: 768px;
+    }
+    .right-menu li{
+        float:right;
+        font-size: 14px;
+        padding-right: 0px;
+    }
+    .intro{
+        padding: 60px 0;
+    }
 }
+@media only screen and (max-width:768px){
+    .wrapper{
+        width: 100vw;
+    }
+    .mobile-hidden{
+        display: none;
+    }
+    .mobile-visible{
+        display: block;
+    }
+    .right-menu li,
+    .right-menu
+    {
+        width: 100%;
+    }
+    .right-menu input{
+        width: 100%;
+    }
+    .right-menu{
+        position:absolute;
+        border-radius: 5px;
+        border:1px solid #d0d0d0;
+        background-color: #e9e9e9;
+        top:75px;
+    }
+    .buttons form{
+        display: none !important;
+    }
+    #menu-check:checked~#collapse{
+        display: block;
+    }
+
+    .intro{
+        padding: 30px 0;
+    }
+    .welcome,.registration{
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+    .welcome h2{
+        font-size: 32px;
+    }
+    .welcome p{
+        font-size: 18px;
+    }
+    .registration input{
+        margin:10px auto;
+    }
+}
+
+
+/*             LOGIN.HTML
+=========================================================*/
+
+.login-form{
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 300px;
+
+}
+.login-logo{
+    margin:0 auto;
+    width: 100px;
+    height: 100px;
+    background: url("../img/logo.png") no-repeat;
+    background-size: 100% 100%;
+}
+.login-title{
+    margin:20px 0;
+    text-align: center;
+    font-size: 24px;
+    color:darkgrey;
+}
+.login-form form,.new-user{
+    border:1px solid #d3d3d3;
+    border-radius: 10px;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+.login-form .inputs{
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+}
+.login-form input:not([type="submit"]){
+    border-radius: 5px;
+    border:2px solid #dadada;
+    padding: 10px;
+}
+.login-form input:not([type="submit"]):focus{
+    border:2px solid #257795;
+    box-shadow: 0 0 5px #257795;
+}
+.login-form input[type="submit"]{
+    height: 50px;
+    border-radius: 5px;
+    margin: 20px auto;
+    font-size: 18px;
+    line-height: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+.new-user{
+    color: grey;
+    padding: 5px;
+}
+.new-user a{
+    text-decoration: none;
+    color:#4078C0;
+}
+.new-user a:hover{
+    text-decoration: underline;
+}
+
+/*               REGISTER.HTML
+==========================================================*/
+

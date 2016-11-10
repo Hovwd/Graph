@@ -1,4 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/style.css"/>
@@ -10,7 +9,7 @@
         <div class="navigation">
             <div class="wrapper">
                 <nav>
-                    <a href="/"><span class="logo"></span></a>
+                    <a href="/dev-project/"><span class="logo"></span></a>
                     <ul class="main-menu">
                         <li><a href="#">List</a></li>
                         <li><a href="#">Link 2</a></li>
@@ -21,13 +20,14 @@
                     <ul class="right-menu mobile-hidden" id="collapse" >
                         <li><a href="#">Link 1</a></li>
                         <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
                         <li class="buttons">
                             <form action="">
                                 <input type="text" name="search" id="search" placeholder="Search"/>
                             </form>
                         </li>
                         <li class="buttons">
-                            <a class="btn" href="login.jsp">Sign in</a>
+                            <a class="btn" href="/login.jsp">Sign in</a>
                         </li>
                         <li class="buttons">
                             <a class="btn btn-success" href="register.jsp">Sign up</a>

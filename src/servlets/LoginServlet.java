@@ -9,15 +9,20 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.text.html.HTMLDocument;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 
 /**
  * Created by developer on 03/11/2016.
  */
 @WebServlet(name = "LoginServlet")
 public class LoginServlet extends HttpServlet {
+    protected Collection a=new ArrayList<>();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out =response.getWriter();
         UserRepository userRepository=new UserRepository();
